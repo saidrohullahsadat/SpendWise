@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settle Up — RoomMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body data-page="settle-up" data-root="pages">
+
+  <div class="app-shell">
+    <div id="sidebar-mount"></div>
+    <div class="main-area">
+      <div id="header-mount"></div>
+      <main class="page-content">
+        <div class="page-heading">
+          <div>
+            <h2>Settle Up</h2>
+            <p>Recommended payments to clear every balance</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px">
+          <div class="card__header">
+            <h3>Recommended Settlements</h3>
+          </div>
+          <div class="card__body" id="settle-recommendations"></div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <h3>Settlement History</h3>
+          </div>
+          <div class="card__body" style="padding:0">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="settlement-history-body"></tbody>
+              </table>
+            </div>
+            <div class="data-card-list" id="settlement-history-cards" style="padding:14px"></div>
+            <div class="empty-state" id="settlement-history-empty" style="display:none">
+              <i data-lucide="history"></i>
+              <h4>No settlements yet</h4>
+              <p>Payments you mark as paid will show up here.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/settlements.js"></script>
+</body>
+
+</html>

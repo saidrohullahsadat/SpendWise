@@ -1,0 +1,57 @@
+/* ==========================================================================
+   RoomMate — Responsive rules
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1080px) {
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-grid-2 { grid-template-columns: 1fr; }
+  .stat-mini-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile menu breakpoint */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    box-shadow: var(--shadow-lg);
+  }
+  .sidebar--open { transform: translateX(0); }
+  .sidebar__close { display: flex; align-items: center; justify-content: center; }
+  .sidebar__scrim { display: block; }
+
+  .main-area { margin-left: 0; }
+  .topheader__menu { display: flex; }
+  .topheader { padding: 0 16px; }
+  .page-content { padding: 20px 16px 40px; }
+
+  .topheader__actions .btn span { display: none; }
+  .topheader__actions .btn { padding: 10px; }
+  .topheader__user-info { display: none; }
+}
+
+@media (max-width: 720px) {
+  .summary-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-row { grid-template-columns: 1fr; }
+  .stat-mini-grid { grid-template-columns: 1fr 1fr; }
+  .topheader__title { font-size: 16px; }
+  .topheader__subtitle { display: none; }
+}
+
+@media (max-width: 560px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .table-wrap { display: none; }
+  .data-card-list { display: flex; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .toolbar select { width: 100%; }
+  .page-heading { align-items: flex-start; }
+  .stat-mini-grid { grid-template-columns: 1fr; }
+  .settle-card { flex-wrap: wrap; }
+}
+
+/* Prevent horizontal overflow anywhere */
+html, body { overflow-x: hidden; }
+img, svg { max-width: 100%; }

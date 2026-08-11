@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expenses — RoomMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body data-page="expenses" data-root="pages">
+
+  <div class="app-shell">
+    <div id="sidebar-mount"></div>
+
+    <div class="main-area">
+      <div id="header-mount"></div>
+
+      <main class="page-content">
+        <div class="page-heading">
+          <div>
+            <h2>All Expenses</h2>
+            <p id="expenses-count">0 expenses</p>
+          </div>
+          <button class="btn btn--primary" id="page-add-expense"><i data-lucide="plus"></i><span>Add
+              Expense</span></button>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar__search">
+            <!-- <i data-lucide="search"></i> -->
+            <input type="text" id="search-input" placeholder="Search expenses...">
+          </div>
+          <select id="filter-category"></select>
+          <select id="filter-member"></select>
+          <select id="filter-date">
+            <option value="all">All Dates</option>
+            <option value="this-week">This Week</option>
+            <option value="this-month">This Month</option>
+            <option value="last-month">Last Month</option>
+          </select>
+          <select id="filter-sort">
+            <option value="date-desc">Newest First</option>
+            <option value="date-asc">Oldest First</option>
+            <option value="amount-desc">Amount: High to Low</option>
+            <option value="amount-asc">Amount: Low to High</option>
+            <option value="name-asc">Name: A to Z</option>
+          </select>
+        </div>
+
+        <div class="card">
+          <div class="card__body" style="padding:0">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Expense</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Paid By</th>
+                    <th>Participants</th>
+                    <th>Date</th>
+                    <th>Split</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="expenses-tbody"></tbody>
+              </table>
+            </div>
+            <div class="data-card-list" id="expenses-cards" style="padding:14px"></div>
+            <div class="empty-state" id="expenses-empty" style="display:none">
+              <i data-lucide="receipt"></i>
+              <h4>No expenses found</h4>
+              <p>Try adjusting your filters, or add a new expense.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/4.4.4/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/expenses.js"></script>
+</body>
+
+</html>
